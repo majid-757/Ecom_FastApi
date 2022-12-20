@@ -1,1 +1,3 @@
 # Ecommerce Website with FastApi
+
+Technology used : FastApi ,SQLAlchemy , .....
