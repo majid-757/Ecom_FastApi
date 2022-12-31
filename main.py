@@ -21,8 +21,9 @@ async def create_business(
     using_db: "Optional[BaseDBAsyncClient]",
     update_fields: List[str],
 )->None:
-
-    pass    
+    
+    if created:
+        business_obj = await Business.create()
 
 
 
@@ -42,8 +43,7 @@ async def user_registration(user:user_paydanticIn):
     new_user = await user_paydantic.from_tortoise_orm(user_obj)
     return {
         "status":"ok",
-        "data": f"Hello {new_user.username}, Thanks for choosing our services. Please check your email inbox 
-        and click on the link below to confirm your registration",
+        "data": f"Hello {new_user.username}, Thanks for choosing our services. Please check your email inbox and click on the link below to confirm your registration",
 
 
     }
