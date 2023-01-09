@@ -23,8 +23,12 @@ async def create_business(
 )->None:
     
     if created:
-        business_obj = await Business.create()
+        business_obj = await Business.create(
+            business_name = instance.username,
+            owner = instance,
 
+        )
+        await business_paydantic.from_tortoise_orm(business_obj)
 
 
 
