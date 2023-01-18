@@ -30,6 +30,7 @@ async def create_business(
         )
         await business_paydantic.from_tortoise_orm(business_obj)
         await business_paydantic.construct()
+        await business_paydantic.update_forward_refs()
 
 
 
